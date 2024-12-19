@@ -1,0 +1,101 @@
+{% extends 'app_tienda/base.html' %}
+{% load static %}
+
+
+{% block title %}
+  
+{% endblock title %}
+  
+
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Rivelli Store | Contáctanos</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'app_tienda/css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'app_tienda/css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'app_tienda/css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+  </div>
+
+
+  <!-- contact section -->
+
+  <section class="contact_section">
+    <div class="contact_container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="contact_form layout_padding">
+              <div class="heading_container heading_center">
+                <h2>
+                  Mantente en contacto
+                </h2>
+              </div>
+              <form action="{% url 'contacto' %}" method="POST">
+                {% csrf_token %}
+                <input name="nombre" placeholder="Nombre completo " id="nombre" name="nombre" required>
+                <div class="top_input">
+                  <input type="email" name="email" placeholder="Email">
+                  <input type="number" name="telefono" placeholder="Número de teléfono">
+                </div>
+                <input type="mensaje" placeholder="Mensaje" class="message_input" id="descripcion" name="descripcion" required>
+                <div class="btn-box" type="submit" style="background-color: #d33d33; color: white; border: none">
+                  <button>
+                    Enviar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/cutom.js"></script>
+
+</body>
+
+</html>
+{% endblock content %}
+  
